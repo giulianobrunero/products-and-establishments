@@ -26,7 +26,7 @@ class ProductBase(models.Model):
 		return f'{self.name} | {self.code}'
 
 
-class Product(models.Model):
+class ProductEstablishment(models.Model):
 	product_base = models.ForeignKey(ProductBase,
 		null=False,
 		blank=False,
