@@ -6,7 +6,7 @@ from api.models import (Establishment, Product, ProductEstablishment)
 from api.serializers import (EstablishmentSerializer, 
 	ProductSerializer, ProductEstablishmentSerializer, ReadProductEstablishmentSerializer)
 from django_filters.rest_framework import DjangoFilterBackend
-
+from rest_framework import filters
 
 class CreateProduct(generics.CreateAPIView):
 	queryset = Product.objects.all()
@@ -41,7 +41,7 @@ class ListEstablishments(generics.ListAPIView):
 class ListProductsEstablishment(generics.ListAPIView):
 	queryset = ProductEstablishment.objects.all()
 	serializer_class = ReadProductEstablishmentSerializer
-	filter_backends = [DjangoFilterBackend]
+	filter_backends = [DjangoFilterBackend,  filters.OrderingFilter]
 	filterset_fields = {
 		# Product
 		'product__name': ['contains'],
@@ -53,3 +53,6 @@ class ListProductsEstablishment(generics.ListAPIView):
 		# Product in Establishment
 		'price': ['gte', 'lte']
 	}
+	ordering_fields = ['pk', 'price', 'product__calories', 
+	'product__saturated_fat_percent', 'product__sugar_percent']
+	ordering = ['price']
