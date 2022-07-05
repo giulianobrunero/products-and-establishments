@@ -44,10 +44,10 @@ class ListProductsEstablishment(generics.ListAPIView):
 	filter_backends = [DjangoFilterBackend]
 	filterset_fields = {
 		# Product
-		'product_base__name': ['contains'],
-		'product_base__calories': ['gte', 'lte'],
-		'product_base__saturated_fat_percent': ['gte', 'lte'],
-		'product_base__sugar_percent': ['gte', 'lte'],
+		'product__name': ['contains'],
+		'product__calories': ['gte', 'lte'],
+		'product__saturated_fat_percent': ['gte', 'lte'],
+		'product__sugar_percent': ['gte', 'lte'],
 		# Establishment
 		'establishment__name': ['contains'],
 		# Product in Establishment
