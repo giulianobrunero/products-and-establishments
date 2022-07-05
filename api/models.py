@@ -17,9 +17,9 @@ class ProductBase(models.Model):
 	code = models.CharField(max_length=20, null=True, blank=True)
 	brand = models.CharField(max_length=100, null=False, blank=False)
 	product_type = models.CharField(max_length=100, null=False, blank=False)
-	calories = models.DecimalField(max_digits=3, decimal_places=2, null=False, blank=False)
-	saturated_fat_percent = models.DecimalField(max_digits=3, decimal_places=2, null=False, blank=False)
-	sugar_percent = models.DecimalField(max_digits=3, decimal_places=2, null=False, blank=False)
+	calories = models.DecimalField(max_digits=7, decimal_places=2, null=False, blank=False)
+	saturated_fat_percent = models.DecimalField(max_digits=5, decimal_places=2, null=False, blank=False)
+	sugar_percent = models.DecimalField(max_digits=5, decimal_places=2, null=False, blank=False)
 	description = models.TextField(blank=True, null=True)
 
 	def __str__(self):
