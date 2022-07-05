@@ -27,7 +27,7 @@ class Product(models.Model):
 
 
 class ProductEstablishment(models.Model):
-	product_base = models.ForeignKey(Product,
+	product = models.ForeignKey(Product,
 		null=False,
 		blank=False,
 		verbose_name="Product",
