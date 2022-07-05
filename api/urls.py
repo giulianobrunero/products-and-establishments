@@ -1,6 +1,6 @@
 from django.urls import path
 from api.views import (CreateProductBase, ListProductsBase, UpdateProductBase,
-	CreateProductEstablishment, CreateEstablishment, ListEstablishments)
+	CreateProductEstablishment, CreateEstablishment, ListEstablishments, ListProductsEstablishment)
 
 urlpatterns = [
 	path('products/create', CreateProductBase.as_view(), name = 'create-product'),
@@ -9,5 +9,5 @@ urlpatterns = [
 	path('establishment/create', CreateEstablishment.as_view(), name = 'create-establishment'),
 	path('establishment/list', ListEstablishments.as_view(), name = 'list-establishments'),
 	path('products-establishment/create', CreateProductEstablishment.as_view(), name = 'create-product-establishment'),
-	#path('products-establishment/list', ListProductsEstablishment.as_view(), name = 'list-products-establishment'),
+	path('products-establishment/list', ListProductsEstablishment.as_view(), name = 'list-products-establishment'),
 ]
