@@ -12,7 +12,7 @@ class Establishment(models.Model):
 		return f'{self.name} | {self.code}'
 
 
-class ProductBase(models.Model):
+class Product(models.Model):
 	name = models.CharField(max_length=100, null=False, blank=False)
 	code = models.CharField(max_length=20, null=True, blank=True)
 	brand = models.CharField(max_length=100, null=False, blank=False)
@@ -27,10 +27,10 @@ class ProductBase(models.Model):
 
 
 class ProductEstablishment(models.Model):
-	product_base = models.ForeignKey(ProductBase,
+	product_base = models.ForeignKey(Product,
 		null=False,
 		blank=False,
-		verbose_name="ProductBase",
+		verbose_name="Product",
 		on_delete=models.CASCADE)
 	establishment = models.ForeignKey(Establishment,
 		null=False,
