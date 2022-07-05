@@ -8,6 +8,7 @@ from api.serializers import (EstablishmentSerializer,
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters
 
+
 class CreateProduct(generics.CreateAPIView):
 	queryset = Product.objects.all()
 	serializer_class = ProductSerializer
