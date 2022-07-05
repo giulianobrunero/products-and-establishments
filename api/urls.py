@@ -1,11 +1,11 @@
 from django.urls import path
-from api.views import (CreateProductBase, ListProductsBase, UpdateProductBase,
+from api.views import (CreateProduct, ListProductsBase, UpdateProduct,
 	CreateProductEstablishment, CreateEstablishment, ListEstablishments, ListProductsEstablishment)
 
 urlpatterns = [
-	path('products/create', CreateProductBase.as_view(), name = 'create-product'),
+	path('products/create', CreateProduct.as_view(), name = 'create-product'),
 	path('products/list', ListProductsBase.as_view(), name = 'list-products'),
-	path('products/update/<int:pk>', UpdateProductBase.as_view(), name = 'update-product'),
+	path('products/update/<int:pk>', UpdateProduct.as_view(), name = 'update-product'),
 	path('establishment/create', CreateEstablishment.as_view(), name = 'create-establishment'),
 	path('establishment/list', ListEstablishments.as_view(), name = 'list-establishments'),
 	path('products-establishment/create', CreateProductEstablishment.as_view(), name = 'create-product-establishment'),
