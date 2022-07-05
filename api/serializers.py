@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from api.models import (Establishment, ProductBase, ProductEstablishment)
+from api.models import (Establishment, Product, ProductEstablishment)
 
 class EstablishmentSerializer(serializers.ModelSerializer):
 	class Meta:
@@ -8,9 +8,9 @@ class EstablishmentSerializer(serializers.ModelSerializer):
 		fields = '__all__'
 
 
-class ProductBaseSerializer(serializers.ModelSerializer):
+class ProductSerializer(serializers.ModelSerializer):
 	class Meta:
-		model = ProductBase
+		model = Product
 		fields = '__all__'
 
 
