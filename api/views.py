@@ -4,7 +4,7 @@ from rest_framework import status
 from rest_framework import permissions
 from api.models import (Establishment, Product, ProductEstablishment)
 from api.serializers import (EstablishmentSerializer, 
-	ProductSerializer, ProductEstablishmentSerializer)
+	ProductSerializer, ProductEstablishmentSerializer, ReadProductEstablishmentSerializer)
 from django_filters.rest_framework import DjangoFilterBackend
 
 
@@ -40,7 +40,7 @@ class ListEstablishments(generics.ListAPIView):
 
 class ListProductsEstablishment(generics.ListAPIView):
 	queryset = ProductEstablishment.objects.all()
-	serializer_class = ProductEstablishmentSerializer
+	serializer_class = ReadProductEstablishmentSerializer
 	filter_backends = [DjangoFilterBackend]
 	filterset_fields = {
 		# Product
