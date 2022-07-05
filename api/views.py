@@ -2,21 +2,21 @@ from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import permissions
-from api.models import (Establishment, ProductBase, Product)
+from api.models import (Establishment, ProductBase, ProductEstablishment)
 from api.serializers import (EstablishmentSerializer, 
-	ProductBaseSerializer, ProductSerializer)
+	ProductBaseSerializer, ProductEstablishmentSerializer)
 
 class CreateProductBase(generics.CreateAPIView):
-    queryset = ProductBase.objects.all()
-    serializer_class = ProductBaseSerializer
+	queryset = ProductBase.objects.all()
+	serializer_class = ProductBaseSerializer
 
 class ListProductsBase(generics.ListAPIView):
-    queryset = ProductBase.objects.all()
-    serializer_class = ProductBaseSerializer
+	queryset = ProductBase.objects.all()
+	serializer_class = ProductBaseSerializer
 
 class UpdateProductBase(generics.RetrieveUpdateAPIView):
-    queryset = ProductBase.objects.all()
-    serializer_class = ProductBaseSerializer
+	queryset = ProductBase.objects.all()
+	serializer_class = ProductBaseSerializer
 
 
 '''
@@ -25,5 +25,10 @@ class DeleteProductBase(generics.DestroyAPIView):
     serializer_class = ProductBaseSerializer
 '''
 
-#class CreateProduct(generics.CreateAPIView)
+class CreateProductEstablishment(generics.ListCreateAPIView):
+	queryset = ProductEstablishment.objects.all()
+	serializer_class = ProductEstablishmentSerializer
+
+
+
 #class ListProductsEstablishments(generics.ListAPIView)
