@@ -38,3 +38,8 @@ class CreateProductEstablishment(generics.ListCreateAPIView):
 class CreateEstablishment(generics.CreateAPIView):
 	queryset = Establishment.objects.all()
 	serializer_class = EstablishmentSerializer
+
+
+class ListEstablishments(generics.ListAPIView):
+	queryset = Establishment.objects.all()
+	serializer_class = EstablishmentSerializer
