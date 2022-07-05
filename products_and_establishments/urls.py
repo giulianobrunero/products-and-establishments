@@ -10,7 +10,7 @@ schema_view = get_schema_view(
     openapi.Info(
         title="Products and establishments API",
         default_version='v1',
-        description="Esta API permite encontrar un producto alimenticio segun sus valores dieteticos y precio por establecimiento.",
+        description="Esta API permite encontrar y comparar productos alimenticios que diferentes establecimientos tengan en stock, según los valores dietéticos y precios.",
         terms_of_service="",
         contact=openapi.Contact(email="giuliano.brunero@gmail.com"),
         license=openapi.License(name="MIT License"),
