@@ -2,25 +2,25 @@ from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import permissions
-from api.models import (Establishment, ProductBase, ProductEstablishment)
+from api.models import (Establishment, Product, ProductEstablishment)
 from api.serializers import (EstablishmentSerializer, 
-	ProductBaseSerializer, ProductEstablishmentSerializer)
+	ProductSerializer, ProductEstablishmentSerializer)
 from django_filters.rest_framework import DjangoFilterBackend
 
 
-class CreateProductBase(generics.CreateAPIView):
-	queryset = ProductBase.objects.all()
-	serializer_class = ProductBaseSerializer
+class CreateProduct(generics.CreateAPIView):
+	queryset = Product.objects.all()
+	serializer_class = ProductSerializer
 
 
 class ListProductsBase(generics.ListAPIView):
-	queryset = ProductBase.objects.all()
-	serializer_class = ProductBaseSerializer
+	queryset = Product.objects.all()
+	serializer_class = ProductSerializer
 
 
-class UpdateProductBase(generics.RetrieveUpdateAPIView):
-	queryset = ProductBase.objects.all()
-	serializer_class = ProductBaseSerializer
+class UpdateProduct(generics.RetrieveUpdateAPIView):
+	queryset = Product.objects.all()
+	serializer_class = ProductSerializer
 
 
 class CreateProductEstablishment(generics.CreateAPIView):
