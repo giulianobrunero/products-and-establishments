@@ -30,7 +30,7 @@ class DeleteProductBase(generics.DestroyAPIView):
 #class ListProductsEstablishments(generics.ListAPIView)
 
 
-class CreateProductEstablishment(generics.ListCreateAPIView):
+class CreateProductEstablishment(generics.CreateAPIView):
 	queryset = ProductEstablishment.objects.all()
 	serializer_class = ProductEstablishmentSerializer
 
